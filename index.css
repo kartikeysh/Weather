@@ -1,0 +1,234 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.warpper{
+    width:100vw;
+    height:100vh;
+    color: var(--colorLight2);
+   
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af );
+}
+h1
+{
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 20px;
+}
+.tab_container
+{
+    display: flex;
+    justify-content: space-between;
+    width:90%;
+    max-width: 550px;
+    margin: 0 auto;/**to center the  container in horizontal*/
+    margin-top: 4rem;
+}
+.tab
+{
+    cursor: pointer;
+    font-size: 0.87rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+.current-tab
+{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+
+}
+.weather-container
+{
+    
+    margin-block: 4rem;
+}
+.grant
+{
+    all:unset;/*to remove default style of button */
+    /* appearance: none***To remove button styling**DOES NOT WORK */
+    /**need to add different with apperance to work i can work*/
+    background-color: var(--colorDark2);
+    padding: 10px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sub-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.grant-location/**me sab chupa duga*/
+{
+    display: none;
+}
+.grant-location.active
+{
+    display: flex;
+}
+.geo
+{
+    margin-bottom: 2rem;
+}
+.grant-location h3{
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem; 
+}
+.grant-location p
+{
+    font-size:0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+  
+}
+
+.loading-container h2{
+    text-transform: uppercase;
+}
+.user-info
+{
+    display: none;
+}
+.user-info.active
+{
+    display: flex;
+}
+.name
+{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    gap: 0 0.5rem;
+}
+.name p{
+    font-size: 2rem;
+}
+.name img{
+    width: 30px;
+    height: 30px;
+}
+.user-info p[air-type]{
+    font-size:1.5rem;
+    font-weight:200;
+}
+.user-info img[data-weather-icon]{
+    width: 90px;
+    height: 90px;
+}
+.user-info p[data-temprature]
+{
+    font-size:2.75rem;
+    font-weight:700;
+
+}
+.parameter-container
+{
+    width:100%;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.parameter{
+    width:30%;
+    max-width:200px;
+    background-color: rgba(219, 226, 239, 0.5);;
+    border-radius: 5px;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    gap:5px 0;
+    /* justify-content: space-between; */
+    align-items: center; 
+} 
+.parameter img{
+    width:50px;
+    height:50px;
+    padding: 0 .5rem;
+}
+.parameter p{
+    text-transform: capitalize;
+    font-size:1.15rem;
+    font-weight: 600;
+
+}
+.form-container
+{
+    display: none;
+    width:90%;
+    max-width:550px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; 
+    margin-bottom: 3rem;
+}
+.form-container.active{
+    display: flex;
+}
+ .form-container input{
+    all:unset;
+    width:  calc(100% - 110px);
+    height:40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-container .btn {
+    all:unset;
+    cursor: pointer;
+    background-color: var(--colorDark2);
+    padding: 10px 8px;
+    text-align:center;
+    width: 40px;
+    height: 35px;
+    border-radius: 100%;
+    margin-bottom:1px;
+
+ 
+}
+.errorMsg
+{
+    display: none;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-weight: 600;
+    opacity: 0.85;
+} 
+.errorMsg.active
+{
+    display: flex;
+}
