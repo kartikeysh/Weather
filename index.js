@@ -9,6 +9,7 @@ let searchButton =  document.querySelector("[search-button]");
 let loading= document.querySelector(".loading-container");
 let userInfo = document.querySelector(".user-info");
 
+
 let currentTab = userTab;
 
 currentTab.classList.add("current-tab")
@@ -34,7 +35,7 @@ function switcch(newtab)
         else
         {
             form.classList.remove('active');
-            userContainer.classList.remove('active');
+            userInfo.classList.remove("active");
             // grantlocation.classList.add('active');
             ///*abb me your weather tab me hu to weather bhi display krna pdega local storage ko check krege for cordinates
             getfromSessionStorage();
@@ -54,7 +55,8 @@ function getfromSessionStorage()
     let coord = sessionStorage.getItem('my-coordinates');
     console.log(coord);
     if(!coord)
-    {   
+    {
+    // {   alert("probelm1")
         grantlocation.classList.add('active');
 
     }
@@ -158,13 +160,8 @@ async function fetchcity(city) {
           );
         const data = await response.json();
          loading.classList.remove("active");
-         if(data?.cod == "404")
-         {
-            let errorMsg = document.querySelector(".errorMsg");
-            errorMsg.innerHTML="City not  found !";
-            errorMsg.classList.add("active")
-            return;
-         }
+         
+         
          userInfo.classList.add("active");
         render(data);
     }
