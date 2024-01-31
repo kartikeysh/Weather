@@ -218,17 +218,4 @@ h1
 
  
 }
-.errorMsg
-{
-    display: none;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-    font-size: large;
-    font-weight: 600;
-    opacity: 0.85;
-} 
-.errorMsg.active
-{
-    display: flex;
-}
+
